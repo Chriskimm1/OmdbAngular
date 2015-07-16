@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Omdb Angular Test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="service.js"></script>
+    <script src="omdbController.js"></script>
+</head>
+<body>
+    <div id="content" ng-app="Omdb" ng-controller="moviesCtrl">
+        <form action="" ng-submit="findMovies($event)">
+            <input type="text" ng-model="searchText"/>
+            <button>Search</button>
+           <!-- <pre>{{ajaxResonse | json}}</pre>-->
+        </form>
+        <div class="movie-container">
+            <h1>{{movies.data.Title}}</h1>
+            <h3>{{movies.data.Year}}</h3>
+            <img src="{{movies.data.Poster}}"></img>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

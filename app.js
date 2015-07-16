@@ -1,0 +1,1 @@
+angular.module('Omdb', ['Omdb.services', 'Omdb.controllers']);
