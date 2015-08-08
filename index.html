@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Omdb Angular Test</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
     <script src="app.js"></script>
     <script src="service.js"></script>
     <script src="omdbController.js"></script>
@@ -15,10 +17,26 @@
             <button>Search</button>
            <!-- <pre>{{ajaxResonse | json}}</pre>-->
         </form>
-        <div class="movie-container">
-            <h1>{{movies.data.Title}}</h1>
-            <h3>{{movies.data.Year}}</h3>
-            <img src="{{movies.data.Poster}}"></img>
+
+        <div class="container col-md-3">
+            <div ng-repeat="movie in movies" class="movie-container">
+                <div ng-click="showMovieInfo(movie.Title)">
+                    <h1>{{movie.Title}}</h1>
+                    <h3>{{movie.Year}}</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="container col-md-9">
+            <div>
+                <h1>{{movie.Title}}</h1>
+                <h3>{{movie.Year}}</h3>
+                <h4>Rated:{{movie.Rated}}</h4>
+                <h4>Duration:{{movie.Runtime}}</h4>
+                <h5>{{movie.Plot}}</h5>
+                <img src="{{movie.Poster}}" alt=""/>
+
+            </div>
         </div>
     </div>
 

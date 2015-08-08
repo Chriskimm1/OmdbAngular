@@ -1,16 +1,17 @@
 module.exports = function(grunt) {
 
     grunt.initConfig({
-        sass: {                              // Task
+        compass: {                              // Task
             dist: {                            // Target
-                files: {                         // Dictionary of files
-                    '/css/bootstrap.css': 'bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss',       // 'destination': 'sourc
+                options: {
+                    sassDir: 'css',
+                    cssDir: 'css',
                 }
             }
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-compass');
 
     grunt.registerTask('default', ['jshint']);
 
