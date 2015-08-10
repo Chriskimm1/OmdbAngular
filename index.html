@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Omdb Angular Test</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/style.css"/>
     <script src="app.js"></script>
@@ -25,6 +26,7 @@
 
         <div class="container content">
             <div class="movie-side-info col-md-3" ng-show="movies">
+                <div class="searchText">Search Results</div>
                 <div class="">
                     <div ng-repeat="movie in movies" class="movie-container">
                         <div ng-click="showMovieInfo(movie.Title)">
@@ -35,13 +37,15 @@
                 </div>
             </div>
 
-            <div class="col-md-9">
+            <div class="movie-detail-container col-md-8" ng-if="movie">
                 <div ng-if="movie" class="movieDetailBox">
-                    <h1>{{movie.Title}}</h1>
-                    <h3>{{movie.Year}}</h3>
-                    <h4>Rated:{{movie.Rated}}</h4>
-                    <h4>Duration:{{movie.Runtime}}</h4>
-                    <h5>{{movie.Plot}}</h5>
+                    <div class="movieInfoText">
+                        <h1>{{movie.Title}}</h1>
+                        <h3>{{movie.Year}}</h3>
+                        <h4>Rated:{{movie.Rated}}</h4>
+                        <h4>Duration:{{movie.Runtime}}</h4>
+                        <h5>{{movie.Plot}}</h5>
+                    </div>
                     <img src="{{movie.Poster}}" alt=""/>
                 </div>
             </div>
