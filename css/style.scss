@@ -1,27 +1,35 @@
 body {
-    background-color: lightgrey;
+  background-color: #272727;
+  color: whitesmoke;
+
+  .container {
+    margin: 0;
+  }
+
+  form {
+    margin-top: 3rem;
+    color:  #272727;
+  }
 }
 
-.header {
-    height: 5rem;
-    background-color: darkgrey;
-    margin-top: -1rem;
-    padding: 1rem;
-    margin: 0 0 1rem 0;
-    color: white;
+.movie-side-info {
+  height: 40.0rem;
+  background-color: #A4A4A4;
+  overflow-y: scroll;
+  color:  #272727;
+
+  h1 {
+    font-size: 1.8rem;
+    margin: 0;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  .movie-container {
+    border: solid black 0.3rem;
+    margin-top: 1rem;
+  }
 }
 
-.header h1 {
-    text-align: center;
-}
-
-#content {
-    button {
-        background-color: cornflowerblue;
-        color: white;
-    }
-
-    input {
-        border : solid lightblue 0.3rem;
-    }
-}

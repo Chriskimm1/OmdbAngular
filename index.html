@@ -11,33 +11,42 @@
     <script src="omdbController.js"></script>
 </head>
 <body>
-    <div id="content" ng-app="Omdb" ng-controller="moviesCtrl">
-        <form action="" ng-submit="findMovies($event)">
-            <input type="text" ng-model="searchText"/>
-            <button>Search</button>
-           <!-- <pre>{{ajaxResonse | json}}</pre>-->
-        </form>
 
-        <div class="container col-md-3">
-            <div ng-repeat="movie in movies" class="movie-container">
-                <div ng-click="showMovieInfo(movie.Title)">
+
+    <div ng-app="Omdb" ng-controller="moviesCtrl">
+        <div class="nav">
+            <h1 class="pull-right">OMDB SEARCH</h1>
+            <form class="pull-left" action="" ng-submit="findMovies($event)">
+                <input placeholder="search a movie" type="text" ng-model="searchText"/>
+                <button>Search</button>
+                <!-- <pre>{{ajaxResonse | json}}</pre>-->
+            </form>
+        </div>
+
+        <div class="container content">
+            <div class="movie-side-info col-md-3" ng-show="movies">
+                <div class="">
+                    <div ng-repeat="movie in movies" class="movie-container">
+                        <div ng-click="showMovieInfo(movie.Title)">
+                            <h1>{{movie.Title}}</h1>
+                            <h3>{{movie.Year}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div ng-if="movie" class="movieDetailBox">
                     <h1>{{movie.Title}}</h1>
                     <h3>{{movie.Year}}</h3>
+                    <h4>Rated:{{movie.Rated}}</h4>
+                    <h4>Duration:{{movie.Runtime}}</h4>
+                    <h5>{{movie.Plot}}</h5>
+                    <img src="{{movie.Poster}}" alt=""/>
                 </div>
             </div>
         </div>
 
-        <div class="container col-md-9">
-            <div>
-                <h1>{{movie.Title}}</h1>
-                <h3>{{movie.Year}}</h3>
-                <h4>Rated:{{movie.Rated}}</h4>
-                <h4>Duration:{{movie.Runtime}}</h4>
-                <h5>{{movie.Plot}}</h5>
-                <img src="{{movie.Poster}}" alt=""/>
-
-            </div>
-        </div>
     </div>
 
 
